@@ -1,0 +1,36 @@
+
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <form>
+              <div class="form-group">
+                <label>Name: </label>
+                <input type="text" class="form-control" ng-model="newPlayer.name">
+              </div>
+
+              <button type="submit" class="btn btn-primary pull-right" ng-click="addPlayer()">Add Player</button>
+            </form>
+
+        <div class="show-user">
+          <table class="table table-hover">
+            <thead>
+              <tr class="active">
+                <th>First Name</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="player in players">
+              <td>{{player.name}}</td>
+              <td><button ng-click="removePlayer(player)" class="btn btn-danger btn-xs">Remove Player</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>

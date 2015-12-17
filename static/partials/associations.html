@@ -1,0 +1,30 @@
+<div class="col-md-12">
+
+  <select class="col-md-4" ng-model="newAssocation.player_name">
+    <option ng-repeat= "player in players">{{player.name}}</option>
+  </select>
+
+  <select class="col-md-4" ng-model="newAssocation.team_name">
+    <option ng-repeat= "team in teams">{{team.name}}</option>
+  </select>
+
+  <button class="btn btn-primary btn-xs" ng-click="addAssociation(newAssocation.player_name, newAssocation.team_name)">Assign Player to Team</button>
+
+  <table class="table table-hover">
+    <thead>
+      <tr class="active">
+        <th>Player Name</th>
+        <th>Team Name:</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="association in associations">
+        <td>{{association.player_name}}</td>
+        <td>{{association.team_name}}</td>
+        <td><button class="btn btn-danger btn-xs" ng-click="removeAssociation(association)">Clear Assignment</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
